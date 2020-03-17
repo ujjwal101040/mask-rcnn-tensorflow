@@ -53,7 +53,7 @@ COPY run_mpi.py /opt/ml/code/run_mpi.py
 COPY run.sh /opt/ml/code/run.sh
 RUN chmod +x /opt/ml/code/run.sh
 
-RUN git clone https://github.com/aws-samples/mask-rcnn-tensorflow /opt/ml/code/mask-rcnn-tensorflow
+RUN git clone https://github.com/ujjwal101040/mask-rcnn-tensorflow
 RUN chmod -R +w  /opt/ml/code/mask-rcnn-tensorflow
 RUN pip install --ignore-installed -e  /opt/ml/code/mask-rcnn-tensorflow
 
