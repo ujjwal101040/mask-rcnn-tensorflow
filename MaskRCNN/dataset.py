@@ -334,6 +334,6 @@ class DetectionDataset(object):
 
 
 if __name__ == '__main__':
-    c = COCODetection(cfg.DATA.BASEDIR, 'Training_images')
+    c = COCODetection(cfg.DATA.BASEDIR, 'Train_images')
     gt_boxes = c.load(add_gt=True, add_mask=True)
     print("#Images:", len(gt_boxes))
