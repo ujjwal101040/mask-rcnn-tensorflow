@@ -22,8 +22,8 @@ __all__ = ['COCODetection', 'DetectionDataset']
 class COCODetection(object):
     # handle the weird (but standard) split of train and val
     _INSTANCE_TO_BASEDIR = {
-        'valminusminival2014': 'val2014',
-        'minival2014': 'val2014',
+        'valminusminival2014': 'Val_images',
+        'minival2014': 'Val_images',
     }
 
     COCO_id_to_category_id = {1: 1, 2:2}  # noqa
