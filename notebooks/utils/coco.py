@@ -24,8 +24,8 @@ class COCOSubsetter(object):
             subdirectories for train2017 and annotations
         """
         self.data_dir = Path(data_dir)
-        self.instance_file = self.data_dir.joinpath('annotations/instances_train2017.json')
-        self.train_dir = self.data_dir.joinpath('train2017')
+        self.instance_file = self.data_dir.joinpath('annotations/training_annotations.json')
+        self.train_dir = self.data_dir.joinpath('Train_images')
         self.images = list(self.train_dir.glob('*.jpg'))
         self.images = {int(os.path.splitext(os.path.basename(i.as_posix()))[0]): \
                            i for i in self.images}
@@ -178,8 +178,8 @@ class COCOSubsetter(object):
         self.create_subset_dir(dir)
         for image in images:
             shutil.copy(self.images[image],
-                        dir.joinpath('train2017').joinpath(os.path.basename(self.images[image])))
-        with open(dir.joinpath('annotations').joinpath('instances_train2017.json'), 'w') as anno_file:
+                        dir.joinpath('Train_images').joinpath(os.path.basename(self.images[image])))
+        with open(dir.joinpath('annotations').joinpath('Training_annotations.json'), 'w') as anno_file:
             anno_file.write(json.dumps(self.filter_annotations(images)))
 
     def duplicate_dataset(self, count, dir):
@@ -205,7 +205,7 @@ class COCOSubsetter(object):
             for num in range(count):
                 new_file = basename + str(num) + '.jpg'
                 shutil.copy(image,
-                        dir.joinpath('train2017').joinpath(new_file))
-        with open(dir.joinpath('annotations').joinpath('instances_train2017.json'), 'w') as outfile:
+                        dir.joinpath('Train_images').joinpath(new_file))
+        with open(dir.joinpath('annotations').joinpath('Training_annotations.json'), 'w') as outfile:
             outfile.write(json.dumps(new_annotations))
 
