@@ -11,8 +11,8 @@ echo "Launch training job...."
 	MODE_MASK=True \
 	MODE_FPN=True \
 	DATA.BASEDIR=/opt/ml/input/data/train \
-	DATA.TRAIN='["train2017"]' \
-	DATA.VAL='("val2017",)' \
+	DATA.TRAIN='["Train_images"]' \
+	DATA.VAL='("Val_images",)' \
 	TRAIN.BATCH_SIZE_PER_GPU=${BATCH_SIZE_PER_GPU} \
 	TRAIN.LR_EPOCH_SCHEDULE='[(9, 0.1), (12, 0.01), (13, None)]' \
 	TRAIN.EVAL_PERIOD=12 \
