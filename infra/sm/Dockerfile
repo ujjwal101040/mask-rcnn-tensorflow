@@ -7,10 +7,10 @@ RUN apt-get install less
 RUN pip uninstall -y tensorflow tensorboard tensorflow-estimator keras h5py horovod numpy
 
 # Download and install custom Tensorflow binary
-RUN wget https://github.com/aws-samples/mask-rcnn-tensorflow/releases/download/v0.0.0/tensorflow-1.13.0-cp36-cp36m-linux_x86_64.whl && \
-    pip install tensorflow-1.13.0-cp36-cp36m-linux_x86_64.whl && \
-    pip install tensorflow-estimator==1.13.0 && \
-    rm tensorflow-1.13.0-cp36-cp36m-linux_x86_64.whl
+RUN wget https://github.com/aws-samples/mask-rcnn-tensorflow/releases/download/v0.0.0/tensorflow-1.18.14-cp36-cp36m-linux_x86_64.whl && \
+    pip install tensorflow-1.18.14-cp36-cp36m-linux_x86_64.whl && \
+    pip install tensorflow-estimator==1.18.14 && \
+    rm tensorflow-1.18.14-cp36-cp36m-linux_x86_64.whl
 
 RUN pip install keras h5py
 
